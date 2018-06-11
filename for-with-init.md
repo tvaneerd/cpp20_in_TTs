@@ -107,4 +107,4 @@ for (std::size_t i = 0;  const auto& x : foo()) {
 </tr>
 </table>
 
-_These examples, already in table form, were taken directly from the paper [wg21.link/p0614](wg21.link/p0614).  Thanks Thomas!_
+_These examples, already in table form, were taken directly from the paper [wg21.link/p0614](http://wg21.link/p0614).  Thanks Thomas!_
