@@ -7,12 +7,6 @@ C++14 gave us _generic lambdas_ where `auto` was used instead of a fixed type, t
 But you couldn't do a bunch of other templaty things, like say `typename T` and then use `T`, etc.
 Now you can.
 
-#### Bonus
-
-`[]<>(){}` is now valid syntax, and this is a valid line of code:
-
-`[]<>(){}();`
-
 #### Examples
 
 Limit a lambda to only work with vector.
