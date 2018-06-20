@@ -28,14 +28,17 @@ struct MyInt
     //    implicit if you pass a short
     // TODO: handle unsigned...
     template &lt;typename Init,
-        std::enabled_if_t&lt;sizeof(Init) &gt;  sizeof(int)&gt;
-    explicit X(Init init)
+        std::enable_if_t&lt;(sizeof(Init) &gt; sizeof(int)),
+            int&gt; = 0&gt;
+    explicit MyInt(Init init)
         : val(static_cast&lt;int&gt;(init))
     {
     }
+    
     template &lt;typename Init,
-        std::enabled_if_t&lt;sizeof(Init) &lt;= sizeof(int)&gt;
-    X(Init init)
+        std::enable_if_t&lt;(sizeof(Init) &lt;= sizeof(int)),
+            int&gt; = 0&gt;
+    MyInt(Init init)
         : val(static_cast&lt;int&gt;(init))
     {
     }
@@ -58,9 +61,9 @@ struct MyInt
     // eg explicit if you pass a long,
     //    implicit if you pass a short
     // (TODO: check for unsigned...) 
-    template &lt;typename Integer&gt;
-    explicit(sizeof(Integer) &gt; sizeof(val))
-    X(Integer init)
+    template &lt;typename Init&gt;
+    explicit(sizeof(Init) &gt; sizeof(int))
+    MyInt(Init init)
         : val(static_cast&lt;int&gt;(init))
     {
     }
