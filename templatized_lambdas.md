@@ -7,6 +7,7 @@ C++14 gave us _generic lambdas_ where `auto` was used instead of a fixed type, t
 But you couldn't do a bunch of other templaty things, like say `typename T` and then use `T`, etc.
 Now you can.
 
+
 #### Bonus?
 
 Is `[]<>(){}` now valid syntax?  Not quite.  The `<>` can't be empty, at least not yet. A few of us want to make that valid... somehow :-)
