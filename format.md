@@ -45,10 +45,10 @@ std::cout << std::format("{} baskets of {}", n, desc);
 <table>
 <tr>
 <th>
-C++17
+<error>
 </th>
 <th>
-C++20
+Apples! 5 baskets left
 </th>
 </tr>
 <tr>
