@@ -88,7 +88,7 @@ _fill-and-align sign `#` `0` width precision `L` type_
 
 (with each part optional).
 
-Note: this is NOT a before/after table!
+
 
 
 
