@@ -159,8 +159,8 @@ assert(s == "   abc");
 assert(s == "$abc$$"); // fill with $
 
 // sign
-/*{}*/ assert(s == "123");
-/*{}*/ assert(s == "-123");
+ /*{}*/  assert(s == "123");
+ /*{}*/  assert(s == "-123");
 
 /*{:-}*/ assert(s == "123");
 /*{:-}*/ assert(s == "-123");
