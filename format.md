@@ -112,6 +112,7 @@ result
 std::string s;
 
 // fill-and-align
+
 s = std::format("{:6}",   123); //default
 s = std::format("{:<6}",  123); //left
 s = std::format("{:^6}",  123); //center
@@ -125,6 +126,7 @@ s = std::format("{:>6}", "abc"); //right
 s = std::format("{:$^6}", "abc"); //fill with
 
 // sign
+
 s = std::format("{}",    123); //default
 s = std::format("{}",   -123); //default
 
@@ -146,6 +148,7 @@ s = std::format("{: }", -123); //space if pos
 // results...
 
 // fill-and-align
+
 assert(s == "   123"); // numbers >
 assert(s == "123   ");
 assert(s == " 123  "); // slightly <
@@ -159,8 +162,9 @@ assert(s == "   abc");
 assert(s == "$abc$$"); // fill with $
 
 // sign
- /*{}*/  assert(s == "123");
- /*{}*/  assert(s == "-123");
+
+/* {} */ assert(s == "123");
+/* {} */ assert(s == "-123");
 
 /*{:-}*/ assert(s == "123");
 /*{:-}*/ assert(s == "-123");
