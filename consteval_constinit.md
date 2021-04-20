@@ -58,18 +58,32 @@ C++20
 <td  valign="top">
 <pre lang="cpp">
 {
-    constexpr int a = squareNumX(100);
-    int b = squareNumX(100);
+    int x = 100;
+    const int y = 100;
+  
+    int a = squareNumX(x);
+    constexpr int b = squareNumX(x); // ERROR
+    int c = squareNumX(y);
+    constexpr int d = squareNumX(y);
 }
+  
+// Error when x is not a constant expression but b is
 </pre>
 </td>
 
 <td  valign="top">
 <pre lang="cpp">
 {
-    constexpr int a = squareNumV(100);                                  
-    int b = sqrC(100);    //ERROR - b is not a constant expression
+    int x = 100;
+    const int y = 100;
+  
+    int a = squareNumV(x);              // ERROR
+    constexpr int b = squareNumV(x);    // ERROR
+    int c = squareNumV(y);
+    constexpr int d = squareNumV(y);  
 }
+// Error when the function argument (x) is not a constant expression 
+
 </pre>
 </td>
 
@@ -97,12 +111,13 @@ C++20 - constinit
 // static storage duration
 constexpr int a = 100;  
   
-int main(){
-    // constexpr or const can be created as a local 
-        variable but cannot be modifed
+int main()
+{
     ++a;                      // ERROR 
     constexpr auto b = 100;   
 }
+// Error since constexpr or const cannot be modifed 
+// constexpr or const can be created locally
 </pre>
 </td>
 
@@ -111,15 +126,16 @@ int main(){
 // static storage duration
 constinit int a = 100;  
   
-int main(){
-    // constinit cannot be created as a local
-        variable but can be modified
+int main()
+{ 
     ++a; 
     constinit auto b = 100;  // ERROR
   
     // has thread storage duration
     constinit thread_local auto res3 = 100;
 }
+// Error since constinit cannot be created locally
+// constinit can be modified
 </pre>
 </td>
 </tr>

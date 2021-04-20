@@ -40,7 +40,7 @@ C++20
 <td  valign="top">
 <pre lang="cpp">
 template< typename T >
-void addTwo(T first, T second)
+T addTwo(T first, T second)
 {
      return first + second; 
 }
