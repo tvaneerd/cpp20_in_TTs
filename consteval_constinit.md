@@ -59,8 +59,7 @@ C++20
 <pre lang="cpp">
 {
     int x = 100;
-    const int y = 100;
-  
+    const int y = 100;  
     int a = squareNumX(x);
     constexpr int b = squareNumX(x); // ERROR
     int c = squareNumX(y);
@@ -76,7 +75,6 @@ C++20
 {
     int x = 100;
     const int y = 100;
-  
     int a = squareNumV(x);              // ERROR
     constexpr int b = squareNumV(x);    // ERROR
     int c = squareNumV(y);
@@ -110,11 +108,10 @@ C++20 - constinit
 <pre lang="cpp">
 // static storage duration
 constexpr int a = 100;  
-  
-int main()
+int main() 
 {
-    ++a;                      // ERROR 
-    constexpr auto b = 100;   
+      ++a;                      // ERROR 
+      constexpr auto b = 100;   
 }
 // Error since constexpr or const cannot be modifed 
 // constexpr or const can be created locally
@@ -125,14 +122,12 @@ int main()
 <pre lang="cpp">
 // static storage duration
 constinit int a = 100;  
-  
 int main()
-{ 
-    ++a; 
-    constinit auto b = 100;  // ERROR
-  
-    // has thread storage duration
-    constinit thread_local auto res3 = 100;
+{  
+      ++a; 
+      constinit auto b = 100;  // ERROR
+      // b has thread storage duration
+      constinit thread_local auto b = 100;
 }
 // Error since constinit cannot be created locally
 // constinit can be modified
