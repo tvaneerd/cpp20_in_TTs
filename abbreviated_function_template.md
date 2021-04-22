@@ -49,7 +49,7 @@ T addTwo(T first, T second)
 
 <td  valign="top">
 <pre lang="cpp">
-// function definition - removed template
+// this is a template, without the word 'template'!
 auto addTwo(auto first, auto second)
 {
     return first + second;  
@@ -60,4 +60,4 @@ auto addTwo(auto first, auto second)
 </tr>
 </table>
 
-Template arguments no longer have to be supplied if they can be deduced from context.
+Looking at it from the point of view of Concepts, `auto` acts like the most unconstrained Concept.
