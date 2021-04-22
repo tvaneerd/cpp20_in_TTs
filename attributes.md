@@ -29,14 +29,14 @@ C++20
 struct Empty {}; 
  
 template < typename T, typename S >
-struct EmptyTemp {
+struct Test {
     T t;
     S s;
 };
 
 int main() {
-    static_assert(sizeof(EmptyTemp< Empty,char >) >= sizeof(char) + 1);   // 2
-    static_assert(sizeof(EmptyTemp< Empty,int >) >= sizeof(int) + 1);     // 8
+    static_assert(sizeof(Test< Empty,char >) >= sizeof(char) + 1); // 2
+    static_assert(sizeof(Test< Empty,int >) >= sizeof(int) + 1);   // 8
 }
 </pre>
 </td>
@@ -46,18 +46,18 @@ int main() {
 struct Empty {}; 
  
 template < typename T, typename S >
-struct EmptyTemp {
+struct Test {
     [[no_unique_address]] T t;
     [[no_unique_address]] S s;
 };
 
 int main() {
     // Different type of objects 
-    static_assert(sizeof(EmptyTemp< Empty,char >) == sizeof(char)); // 1
-    static_assert(sizeof(EmptyTemp< Empty,int >) == sizeof(int));   // 4
+    static_assert(sizeof(Test< Empty,char >) == sizeof(char)); // 1
+    static_assert(sizeof(Test< Empty,int >) == sizeof(int));   // 4
 
     // Same objects
-    static_assert(sizeof(EmptyTemp< Empty,Empty >) == 2);   
+    static_assert(sizeof(Test< Empty,Empty >) == 2);   
 }
 </pre>
 </td>
