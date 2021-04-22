@@ -35,6 +35,7 @@ struct Test {
 };
 
 int main() {
+
     static_assert(sizeof(Test< Empty,char >) >= sizeof(char) + 1); // 2
     static_assert(sizeof(Test< Empty,int >) >= sizeof(int) + 1);   // 8
 }
