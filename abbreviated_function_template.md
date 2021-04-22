@@ -60,4 +60,6 @@ auto addTwo(auto first, auto second)
 </tr>
 </table>
 
+(To be clear - it is the `auto` used as a param - even just one of the params - that makes it a template.)
+
 Looking at it from the point of view of Concepts, `auto` acts like the most unconstrained Concept.
